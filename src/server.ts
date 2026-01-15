@@ -3,14 +3,14 @@ import { Server } from 'http';
 import mongoose from 'mongoose';
 import app from './app';
 import config from './app/config';
-import seedSuperAdmin from './app/DB';
+import dns from "node:dns/promises";
+dns.setServers(["1.1.1.1"]);
 
 let server: Server;
 
 async function main() {
   try {
     await mongoose.connect(config.mongodb_url as string);
-    await seedSuperAdmin();
     server = app.listen(config.port, () => {
       console.log(`app is listening on port ${config.port}`);
     });

@@ -6,11 +6,10 @@ import config from '../../config';
 
 const OTPSchema = new Schema<TOTP, TOTPModel>(
   {
-    email: { type: String, required: true, lowercase: true, trim: true },
+    email: { type: String, required: true, lowercase: true, trim: true, index: true },
     expiresAt: {
       type: Date,
       required: true,
-      index: { expireAfterSeconds: 0 },
     },
     otpHashed: {
       type: String,
@@ -33,10 +32,6 @@ const OTPSchema = new Schema<TOTP, TOTPModel>(
   },
   { timestamps: true },
 );
-
-// Indexes
-OTPSchema.index({ email: 1, purpose: 1 });
-OTPSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
 
 // Generate OTP
 OTPSchema.statics.generateOTP = function () {

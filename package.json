@@ -28,7 +28,7 @@
     "express": "^4.19.2",
     "http-status": "^1.8.1",
     "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.16.0",
+    "mongodb": "^6.21.0",
     "mongoose": "^8.14.0",
     "multer": "^2.0.2",
     "nodemailer": "^6.10.0",
