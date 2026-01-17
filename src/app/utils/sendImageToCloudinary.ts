@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { UploadApiResponse, v2 as cloudinary } from 'cloudinary';
 import fs from 'fs';
 import multer from 'multer';
@@ -23,7 +24,7 @@ export const sendImageToCloudinary = (
         }
         resolve(result as UploadApiResponse);
         // delete a file asynchronously
-        fs.unlink(path, (err) => {
+        fs.unlink(path, err => {
           if (err) {
             console.log(err);
           } else {

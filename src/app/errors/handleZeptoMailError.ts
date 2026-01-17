@@ -22,7 +22,8 @@ const handleZeptoMailError = (err: any): TGenericErrorResponse => {
       },
     ];
   } else if (err?.request) {
-    message = 'No response received from ZeptoMail. Please check your network or API key.';
+    message =
+      'No response received from ZeptoMail. Please check your network or API key.';
     errorSources = [
       {
         path: '',

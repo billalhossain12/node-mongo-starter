@@ -3,8 +3,8 @@ import { Server } from 'http';
 import mongoose from 'mongoose';
 import app from './app';
 import config from './app/config';
-import dns from "node:dns/promises";
-dns.setServers(["1.1.1.1"]);
+import dns from 'node:dns/promises';
+dns.setServers(['1.1.1.1']);
 
 let server: Server;
 

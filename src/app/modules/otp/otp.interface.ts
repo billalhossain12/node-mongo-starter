@@ -9,7 +9,7 @@ export interface TOTP {
   purpose: 'email-verification' | 'password-reset' | 'account-recovery';
   attempts: number;
   maxAttempts: number;
-  createdAt:string;
+  createdAt: string;
 
   // Instance methods
   verifyOTP(inputOTP: string): Promise<boolean>;

@@ -6,7 +6,13 @@ import config from '../../config';
 
 const OTPSchema = new Schema<TOTP, TOTPModel>(
   {
-    email: { type: String, required: true, lowercase: true, trim: true, index: true },
+    email: {
+      type: String,
+      required: true,
+      lowercase: true,
+      trim: true,
+      index: true,
+    },
     expiresAt: {
       type: Date,
       required: true,
